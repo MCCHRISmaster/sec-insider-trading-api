@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 HEADERS = {"User-Agent": "YourCompanyName contact@yourdomain.com"}
-SEC_RSS_URL = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=4&count=20&output=atom"
+SEC_RSS_URL = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=4&count=100&output=atom"
 # Inside tracker.py
 DB_URI = os.getenv("DATABASE_URL")
 # If using Neon, swap it out: DB_URI = "your_neon_connection_string_here"
@@ -122,4 +122,4 @@ if __name__ == "__main__":
                 save_to_db(filing["accession_number"], data)
                 
             processed_filings.add(filing["accession_number"])
-        time.sleep(60)
+        time.sleep(30)
