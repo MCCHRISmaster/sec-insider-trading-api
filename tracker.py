@@ -12,7 +12,7 @@ load_dotenv()
 HEADERS = {"User-Agent": "YourCompanyName contact@yourdomain.com"}
 SEC_RSS_URL = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=4&count=20&output=atom"
 # Inside tracker.py
-DB_URI = "DATABASE_URL"
+DB_URI = os.getenv("DATABASE_URL")
 # If using Neon, swap it out: DB_URI = "your_neon_connection_string_here"
 
 def init_db():
